@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var pg = require('pg');
-var connectionString = 'postgres://localhost:5432/omicron';
+var connectionString = 'postgres://localhost:5432/omicron_group';
 
 router.get('/', function(req, res){
 
@@ -10,7 +10,10 @@ router.get('/', function(req, res){
       res.sendStatus(500);
     }
 
-    client.query('SELECT * FROM customers JOIN addresses ON customer_id = customers.id LEFT JOIN orders ON address_id = addresses.id', function (err, result){
+    client.query('SELECT COUNT(orders.id),customers.last_name, customers.first_name  FROM orders ' +
+'RIGHT JOIN addresses ON addresses.id = orders.address_id ' +
+'RIGHT JOIN customers ON customers.id = addresses.customer_id ' +
+'GROUP BY customers.id;', function (err, result){
       console.log("post request");
       done();
 

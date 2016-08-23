@@ -17,7 +17,7 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './public/views/index.html'));
 });
 
-app.set('port', 3000);
+app.set('port', 5000);
 
 app.listen(process.env.PORT || app.get('port'), function () {
   console.log('Listening at port ', app.get('port'));
