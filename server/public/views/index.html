@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+  <head>
+    <title>Orders Review</title>
+    <script src="/public/vendor/angular.min.js"></script>
+    <script src="/public/scripts/client-app.js"></script>
+
+    <link rel="stylesheet" href="/public/styles/style.css" />
+  </head>
+
+  <body ng-controller="OrdersController">
+    <div class="customerList">
+      <h1>Customer List</h1>
+      <ul ng-repeat="customer in customers">
+        <li>{{customer.first_name + " " + customer.last_name}}</li>
+      </ul>
+    </div>
+    <div class="orderHistory">
+      <h1>Order List</h1>
+      <ul>
+        {{}}
+      </ul>
+    </div>
+  </body>
+</html>
