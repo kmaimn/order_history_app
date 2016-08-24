@@ -5,7 +5,7 @@ GROUP BY customers.id;
 
 #2
 
-SELECT (line_items.quantity), customers.id, orders.order_date, products.description, line_items.unit_price, customers.first_name, customers.last_name, addresses.street, addresses.city, addresses.zip, addresses.state FROM line_items
+SELECT (line_items.quantity), customers.id, orders.order_date, products.description, line_items.unit_price, customers.first_name, customers.last_name, addresses.street, addresses.city, addresses.zip, addresses.state, orders.id FROM line_items
 JOIN products ON products.id = line_items.product_id
 JOIN orders ON orders.id = line_items.order_id
 JOIN addresses ON addresses.id = orders.address_id

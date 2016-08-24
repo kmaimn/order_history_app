@@ -25,7 +25,7 @@
     <div class="orderHistory col-md-4">
       <h1>Order List</h1>
       <ul ng-repeat="order in orders2">
-        <li>{{"Item: " +order.description}}<br /> {{"Quantity: " +order.quantity}}<br />
+        <li>{{"Order Number: " +order.id}}<br /> {{"Item: " +order.description}}<br /> {{"Quantity: " +order.quantity}}<br />
           {{"Unit Price: $" +order.unit_price}}<br />{{"Total Cost: $" +(order.quantity*order.unit_price)}}<br /> {{"Shipping Address: " +order.street+ " " +order.city+ ", " +order.zip+ " " +order.state}}</li>
 
       </ul>
