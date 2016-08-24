@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var pg = require('pg');
-var connectionString = 'postgres://localhost:5432/omicron';
+var connectionString = 'postgres://localhost:5432/omicron_group';
 
 router.get('/names', function(req, res){
 
@@ -9,6 +9,7 @@ router.get('/names', function(req, res){
     if (err){
       res.sendStatus(500);
     }
+
 
     client.query('SELECT COUNT (orders.id), customers.first_name, customers.last_name FROM orders ' + 'RIGHT JOIN addresses ON addresses.id = orders.address_id ' +
     'JOIN customers ON customers.id = addresses.customer_id ' +
