@@ -13,14 +13,15 @@
     <div class="customerList">
       <h1>Customer List</h1>
       <ul ng-repeat="customer in customers">
-        <li>{{customer.first_name + " " + customer.last_name}}    <button ng-if="customer.count > 0" ng-click="">View Orders</button><span ng-if="customer.count == 0">    Prospect</span></li>
+        <li>{{customer.first_name + " " + customer.last_name}}    <button ng-if="customer.count > 0" ng-click="getOrders(customer.id)">View Orders</button><span ng-if="customer.count == 0">    Prospect</span></li>
       </ul>
 
     </div>
     <div class="orderHistory">
       <h1>Order List</h1>
-      <ul>
-        {{order}}
+      <ul ng-repeat="order in orders">
+        <li></li>
+
       </ul>
     </div>
   </body>
