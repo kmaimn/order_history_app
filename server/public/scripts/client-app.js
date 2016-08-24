@@ -13,13 +13,13 @@ myApp.controller('OrdersController', ['$scope', '$http', function ($scope, $http
     console.log($scope.customers);
   });
 
-  $http({
-    method: 'GET',
-    url: '/orders/orders',
-  }).then(function (response) {
-    console.log('response object ', response);
-    $scope.orders = response.data;
-  });
+  // $http({
+  //   method: 'GET',
+  //   url: '/orders/orders',
+  // }).then(function (response) {
+  //   // console.log('response object ', response);
+  //   $scope.orders = response.data;
+  // });
 
   $scope.getOrders = function(customerId){
     var customerId = customerId
