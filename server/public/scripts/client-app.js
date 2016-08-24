@@ -4,8 +4,6 @@ myApp.controller('OrdersController', ['$scope', '$http', function ($scope, $http
 
   console.log('IndexController loaded')
 
-  var id = $(this).parent().data('id');
-
   $http({
     method: 'GET',
     url: '/orders/names'
@@ -16,10 +14,10 @@ myApp.controller('OrdersController', ['$scope', '$http', function ($scope, $http
 
   $http({
     method: 'GET',
-    url: '/orders' + id,
+    url: '/orders/orders',
   }).then(function (response) {
     console.log('response object ', response);
-    $scope.orders = response.data();
+    $scope.orders = response.data;
   });
 
 }]);
