@@ -31,9 +31,6 @@ myApp.controller('OrdersController', ['$scope', '$http', function ($scope, $http
       $scope.orders2 = response.data;
       console.log($scope.orders2);
     });
-
   };
-
-
 
 }]);
